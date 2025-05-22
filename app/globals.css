@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%; /* Preto para o fundo */
+    --foreground: 0 0% 95%; /* Texto claro para contraste */
+    --card: 0 0% 10%; /* Cartões um pouco mais claros que o fundo */
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 145 60% 20%; /* Verde escuro */
+    --primary-foreground: 0 0% 95%;
+    --secondary: 145 30% 15%; /* Verde mais escuro e menos saturado */
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 15%; /* Cinza escuro */
+    --muted-foreground: 0 0% 70%;
+    --accent: 145 40% 15%; /* Verde escuro para acentos */
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 70% 45%; /* Vermelho para alertas/erros */
+    --destructive-foreground: 0 0% 95%;
+    --border: 145 30% 15%; /* Verde escuro para bordas */
+    --input: 145 30% 15%;
+    --ring: 145 60% 25%; /* Verde um pouco mais claro para foco */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 5%; /* Ainda mais escuro para o modo dark */
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 145 70% 20%; /* Verde um pouco mais saturado no dark mode */
+    --primary-foreground: 0 0% 95%;
+    --secondary: 145 40% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 145 50% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 145 40% 15%;
+    --input: 145 40% 15%;
+    --ring: 145 70% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animação de flutuação */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Classe para botões especiais */
+.btn-special {
+  height: 50px !important;
+  border-radius: 50px !important;
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-special:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 15px 0px rgba(0, 0, 0, 0.2);
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Adicione isso ao final do arquivo globals.css */
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    word-break: break-word;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* Melhorar a visualização em dispositivos com tela muito pequena */
+@media (max-width: 280px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .text-3xl {
+    font-size: 1.25rem;
+  }
+
+  .text-2xl {
+    font-size: 1.125rem;
+  }
+
+  .text-xl {
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes para dispositivos com tela muito grande */
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* Ajustes para melhorar a legibilidade no tema escuro */
+.bg-muted {
+  background-color: hsl(0, 0%, 10%); /* Um pouco mais claro que o fundo principal */
+}
+
+/* Ajuste para garantir que os textos tenham contraste adequado */
+.text-muted-foreground {
+  color: hsl(0, 0%, 75%); /* Cinza claro para textos secundários */
+}
