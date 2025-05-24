@@ -140,11 +140,10 @@ const projectsData = [
 
 // Links de redes sociais
 const socialLinks = {
-  facebook: "https://facebook.com/ualfinhe",
-  twitter: "https://twitter.com/ualfinhe",
-  instagram: "https://instagram.com/ualfinhe",
+  facebook: "https://facebook.com/Ualfinhe",
+  instagram: "https://instagram.com/Ualfinhe",
   linkedin: "https://linkedin.com/in/ualfinhe",
-  tiktok: "https://tiktok.com/@ualfinhe",
+  tiktok: "https://tiktok.com/@futurodev",
 }
 
 const weeklyScheduleData = [
